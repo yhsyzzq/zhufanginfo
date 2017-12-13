@@ -16,6 +16,8 @@ class ZhufanginfoItem(scrapy.Item):
     price = scrapy.Field()  # 价格
     payType = scrapy.Field()  # 支付方式
     rentType = scrapy.Field()  # 租赁方式
+    bedRoomType = scrapy.Field()  # 卧室类型
+    sexLimit = scrapy.Field()  # 性别限制
     roomType = scrapy.Field()  # 房屋类型
     roomSize = scrapy.Field()  # 房屋大小
     decorationType = scrapy.Field()  # 装修方式
@@ -28,7 +30,7 @@ class ZhufanginfoItem(scrapy.Item):
     secondDistrict = scrapy.Field()  # 二级行政区域
     firstDistrict = scrapy.Field()  # 一级行政区域
     subwayDistance = scrapy.Field()  # 最近地铁站距离
-    address = scrapy.Field()  # 地址
+    address = scrapy.Field()  # 详细地址
     cellphone = scrapy.Field()  # 联系电话
     bed = scrapy.Field()  # 床
     chest = scrapy.Field()  # 衣柜
