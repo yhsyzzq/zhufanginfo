@@ -20,6 +20,10 @@ class Zhufang58Spider(scrapy.Spider):
                 yield scrapy.Request(url, callback=self.parse_room)
                 i = i + 1
 
+        nextPage = sel.xpath('//li[@id="bottom_ad_li"]/div[@class="pager"]/a[@class="next"]/@href').extract_first()
+        if nextPage is not None:
+            yield response.follow(nextPage.strip(), self.parse)
+
     def parse_room(self, response):
         def response_to_xpath(query):
             if response.xpath(query).extract_first() == None:
